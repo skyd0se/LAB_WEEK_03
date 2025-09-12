@@ -1,11 +1,11 @@
 package com.example.lab_week_03
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,18 +17,9 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ListFragment : Fragment(), View.OnClickListener {
+class ListFragment : Fragment(){
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var coffeeListener: CoffeeListener;
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is CoffeeListener) {
-            coffeeListener = context
-        } else {
-            throw RuntimeException("Must implement CoffeeListener")
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,14 +45,14 @@ class ListFragment : Fragment(), View.OnClickListener {
             view.findViewById(R.id.americano),
             view.findViewById(R.id.latte)
         )
-        coffeeList.forEach {
-            it.setOnClickListener(this)
-        }
-    }
 
-    override fun onClick(v: View?) {
-        v?.let { coffee ->
-            coffeeListener.onSelected(coffee.id)
+        coffeeList.forEach{ coffee ->
+            val fragmentBundle = Bundle()
+            fragmentBundle.putInt(COFFEE_ID, coffee.id)
+            coffee.setOnClickListener(
+                Navigation.createNavigateOnClickListener(
+                    R.id.coffee_id_action, fragmentBundle)
+            )
         }
     }
 
@@ -74,5 +65,6 @@ class ListFragment : Fragment(), View.OnClickListener {
                     putString(ARG_PARAM2, param2)
                 }
             }
+        const val COFFEE_ID = "COFFEE_ID"
     }
 }
