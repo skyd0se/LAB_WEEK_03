@@ -37,5 +37,17 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/latte_title"/>
+        <TextView
+            android:id="@+id/irishCoffee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/irishCoffee_title"/>
+        <TextView
+            android:id="@+id/flatWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/flatWhite_title"/>
     </LinearLayout>
 </ScrollView>

@@ -45,6 +45,9 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val coffeeId = arguments?.getInt(COFFEE_ID, 0) ?: 0
         setCoffeeData(coffeeId)
+        view.findViewById<View>(R.id.btn_back).setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
     }
     fun setCoffeeData(id: Int){
         when(id){
@@ -60,8 +63,17 @@ class DetailFragment : Fragment() {
                 coffeeTitle?.text = getString(R.string.latte_title)
                 coffeeDesc?.text = getString(R.string.latte_desc)
             }
+            R.id.irishCoffee -> {
+                coffeeTitle?.text = getString(R.string.irishCoffee_title)
+                coffeeDesc?.text = getString(R.string.irishCoffee_desc)
+            }
+            R.id.flatWhite -> {
+                coffeeTitle?.text = getString(R.string.flatWhite_title)
+                coffeeDesc?.text = getString(R.string.flatWhite_desc)
+            }
         }
     }
+
     companion object {
         private const val COFFEE_ID = "COFFEE_ID"
         fun newInstance(coffeeId: Int) =

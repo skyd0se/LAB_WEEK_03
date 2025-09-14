@@ -12,6 +12,16 @@ extraction.)</string>
     <string name="latte_desc">A tall, mild \'milk coffee\' (about 150-300 ml). An
 espresso with steamed milk and only a little milk foam poured over it. Serve in a
 latte glass or a coffee cup. Flavored syrup can be added.</string>
+    <string name="irishCoffee_title">IRISH COFFEE</string>
+    <string name="irishCoffee_desc">Irish coffee (Irish: caife Gaelach) is a caffeinated
+        alcoholic drink consisting of Irish whiskey, hot coffee and sugar, which has been
+        stirred and topped with cream (sometimes cream liqueur). The coffee is drunk through
+        the cream.</string>
+    <string name="flatWhite_title">FLAT WHITE</string>
+    <string name="flatWhite_desc">a coffee drink consisting of espresso and steamed milk.
+        It generally has a higher proportion of espresso to milk than a latte, and lacks
+        the thick layer of foam in a cappuccino.</string>
+
     <string name="coffee_list">Coffee List</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
